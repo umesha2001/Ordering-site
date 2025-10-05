@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const foodSchema = new mongoose.Schema({
     name: {type:String,required:true},
     description: {type:String,required:true},
-    price: {type:String,required:true},
-    Image: {type:String,required:true},
+    price: {type:Number,required:true},  // Also changed to Number
+    image: {type:String,required:true},  // Changed to lowercase
     category: {type:String,required:true}
 })
 
-const foodModel = mongoose.models.food || mongoose.model("food" ,foodSchema);
+const foodModel = mongoose.models.food || mongoose.model("food", foodSchema);
 
 export default foodModel;
